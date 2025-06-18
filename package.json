@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@sentry-internal/feedback": "file:.yalc/@sentry-internal/feedback",
     "@sentry/nextjs": "^9.30.0",
     "next": "15.3.3",
     "react": "^19.0.0",
