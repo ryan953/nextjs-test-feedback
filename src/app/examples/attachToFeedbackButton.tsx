@@ -14,7 +14,10 @@ export default function AttachToFeedbackButton() {
   useEffect(() => {
     if (feedback && buttonRef.current) {
       const unsubscribe = feedback.attachTo(buttonRef.current, {
-        tags: {component: 'AttachToFeedbackButton'}
+        tags: {component: 'AttachToFeedbackButton'},
+        onSubmitSuccess: (data, eventId) => {
+          console.log('onSubmitSuccess', data, eventId);
+        },
       })
       return unsubscribe;
     }
