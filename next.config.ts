@@ -35,4 +35,7 @@ disableLogger: true,
 // https://docs.sentry.io/product/crons/
 // https://vercel.com/docs/cron-jobs
 automaticVercelMonitors: true,
+
+// Disable the Next.js dev toolbar
+devIndicators: false
 });

@@ -928,10 +928,8 @@
   dependencies:
     "@sentry/core" "9.30.0"
 
-"@sentry-internal/feedback@9.30.0":
+"@sentry-internal/feedback@9.30.0", "@sentry-internal/feedback@file:.yalc/@sentry-internal/feedback":
   version "9.30.0"
-  resolved "https://registry.yarnpkg.com/@sentry-internal/feedback/-/feedback-9.30.0.tgz#dfececf6aefce951ce50028f2ac25743a3bbdd63"
-  integrity sha512-qAZ7xxLqZM7GlEvmSUmTHnoueg+fc7esMQD4vH8pS7HI3n9C5MjGn3HHlndRpD8lL7iUUQ0TPZQgU6McbzMDyw==
   dependencies:
     "@sentry/core" "9.30.0"
 
