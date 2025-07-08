@@ -4,8 +4,12 @@
 
 import * as Sentry from "@sentry/nextjs";
 
+const DSN = {
+  'sentry-test/ryan-nextjs-test-feedback': 'https://223ff754cd7be1037ac9468df1ceed65@o19635.ingest.us.sentry.io/4509520745463808',
+};
+
 Sentry.init({
-  dsn: "https://223ff754cd7be1037ac9468df1ceed65@o19635.ingest.us.sentry.io/4509520745463808",
+  dsn: DSN['sentry-test/ryan-nextjs-test-feedback'],
 
   // Add optional integrations for additional features
   integrations: [
