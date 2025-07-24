@@ -37,5 +37,5 @@ disableLogger: true,
 automaticVercelMonitors: true,
 
 // Disable the Next.js dev toolbar
-devIndicators: false
+// devIndicators: false
 });
