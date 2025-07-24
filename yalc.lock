@@ -1,9 +1,0 @@
-{
-  "version": "v1",
-  "packages": {
-    "@sentry-internal/feedback": {
-      "signature": "a48c5f3afaef9594b49488d46af9d25b",
-      "file": true
-    }
-  }
-}
