@@ -10,7 +10,7 @@ export default function ToggleFeedbackButton() {
     setFeedback(Sentry.getFeedback());
   }, []);
 
-  const [widget, setWidget] = useState<ReturnType<typeof Sentry.getFeedback>['createWidget']>();
+  const [widget, setWidget] = useState<null | {removeFromDom: () => void}>();
   return (
     <button
       className="hover:bg-hover px-4 py-2 rounded-md"
