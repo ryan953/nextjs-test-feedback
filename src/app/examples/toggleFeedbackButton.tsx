@@ -4,13 +4,13 @@ import {useEffect, useState} from 'react';
 import * as Sentry from "@sentry/nextjs";
 
 export default function ToggleFeedbackButton() {
-  const [feedback, setFeedback] = useState<FeedbackIntegration>();
+  const [feedback, setFeedback] = useState<ReturnType<typeof Sentry.getFeedback>>();
   // Read `getFeedback` on the client only, to avoid hydration errors when server rendering
   useEffect(() => {
     setFeedback(Sentry.getFeedback());
   }, []);
 
-  const [widget, setWidget] = useState<FeedbackWidget>();
+  const [widget, setWidget] = useState<ReturnType<typeof Sentry.getFeedback>['createWidget']>();
   return (
     <button
       className="hover:bg-hover px-4 py-2 rounded-md"

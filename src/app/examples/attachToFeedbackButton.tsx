@@ -4,7 +4,7 @@ import {useEffect, useState, useRef} from 'react';
 import * as Sentry from "@sentry/nextjs";
 
 export default function AttachToFeedbackButton() {
-  const [feedback, setFeedback] = useState<FeedbackIntegration>();
+  const [feedback, setFeedback] = useState<ReturnType<typeof Sentry.getFeedback>>();
   // Read `getFeedback` on the client only, to avoid hydration errors when server rendering
   useEffect(() => {
     setFeedback(Sentry.getFeedback());
@@ -15,8 +15,8 @@ export default function AttachToFeedbackButton() {
     if (feedback && buttonRef.current) {
       const unsubscribe = feedback.attachTo(buttonRef.current, {
         tags: {component: 'AttachToFeedbackButton'},
-        onSubmitSuccess: (data, eventId) => {
-          console.log('onSubmitSuccess', data, eventId);
+        onSubmitSuccess: (data) => {
+          console.log('onSubmitSuccess', data);
         },
       })
       return unsubscribe;
