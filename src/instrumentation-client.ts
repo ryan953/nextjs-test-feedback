@@ -21,6 +21,16 @@ Sentry.init({
     }),
   ],
 
+  // Only trigger the crash report dialog if the user logs an exception with the `useCrashReport` tag.
+  // See https://github.com/ryan953/nextjs-test-feedback/blob/main/src/app/examples/crashReportButton.tsx
+  beforeSend(event, hint: Sentry.EventHint) {
+    // Check if it is an exception, and if so, show the report dialog
+    if (event.exception && event.event_id && hint.data?.useCrashReport) {
+      Sentry.showReportDialog({ eventId: event.event_id });
+    }
+    return event;
+  },
+
   // Define how likely traces are sampled. Adjust this value in production, or use tracesSampler for greater control.
   tracesSampleRate: 0,
 
