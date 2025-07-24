@@ -9,7 +9,11 @@ import ThumbsUpDownButtons from "src/app/examples/thumbsUpDownButtons";
 export default function Home() {
   return (
     <div className="m-auto max-w-screen-lg">
-      <h1 className="text-2xl mt-4">Feedback Test Area (<a href="https://github.com/ryan953/nextjs-test-feedback">source</a>)</h1>
+      <h1 className="text-2xl mt-4">
+        <a className="float-right" href="https://nextjs-test-feedback.vercel.app/">https://nextjs-test-feedback.vercel.app/</a>
+        Feedback Test Area (<a href="https://github.com/ryan953/nextjs-test-feedback">Github</a>)
+        
+      </h1>
       <p>
         This is an example Next.JS website that implements the Sentry Feedback SDK.
         It shows how to trigger Feedback in various ways.
