@@ -1,44 +1,61 @@
-import * as Sentry from "@sentry/nextjs";
-
 import FeedbackButton from "./examples/feedbackButton";
 import ToggleFeedbackButton from "./examples/toggleFeedbackButton";
 import AttachToFeedbackButton from "./examples/attachToFeedbackButton";
 import CreateFeedbackFromButton from "./examples/createFeedbackFormButton";
 import MyFeedbackForm from "./examples/myFeedbackForm";
 import CrashReportButton from "./examples/crashReportButton";
-
-type FeedbackIntegration = ReturnType<typeof Sentry.getFeedback>;
-type FeedbackWidget = any; // Should be something like ReturnType<FeedbackIntegration['createWidget']>;
+import ThumbsUpDownButtons from "src/app/examples/thumbsUpDownButtons";
 
 export default function Home() {
   return (
     <div className="m-auto max-w-screen-lg">
       <h1 className="text-2xl mt-4">Feedback Test Area</h1>
       <p>
-        This Pokemart app is an example Next.JS website that simulates a
-        storefront. It is instrumented with the Sentry SDK featuring Session
-        Replay, Feedback, Distributed Tracing and of course Errors!.
+        This is an example Next.JS website that implements the Sentry Feedback SDK.
+        It shows how to trigger Feedbakc in various ways.
       </p>
-      <ul className="raw">
+      <ul className="raw flex flex-col gap-2">
         <li>
-          <div className="flex">
+          <fieldset className="border-1 border-gray-300 rounded-md p-2">
+            <legend>Feedback Button</legend>
             <FeedbackButton />
-          </div>
+          </fieldset>
         </li>
         <li>
-          <ToggleFeedbackButton />
+          <fieldset className="border-1 border-gray-300 rounded-md p-2">
+            <legend>Toggle Feedback Button</legend>
+            <ToggleFeedbackButton />
+          </fieldset>
         </li>
         <li>
-          <AttachToFeedbackButton />
+          <fieldset className="border-1 border-gray-300 rounded-md p-2">
+            <legend>Attach To Feedback Button</legend>
+            <AttachToFeedbackButton />
+          </fieldset>
         </li>
         <li>
-          <CreateFeedbackFromButton />
+          <fieldset className="border-1 border-gray-300 rounded-md p-2">
+            <legend>Create Feedback From Button</legend>
+            <CreateFeedbackFromButton />
+          </fieldset>
         </li>
         <li>
-          <MyFeedbackForm />
+          <fieldset className="border-1 border-gray-300 rounded-md p-2">
+            <legend>My Feedback Form</legend>
+            <MyFeedbackForm />
+          </fieldset>
         </li>
         <li>
-          <CrashReportButton />
+          <fieldset className="border-1 border-gray-300 rounded-md p-2">
+            <legend>Crash Report Button</legend>
+            <CrashReportButton />
+          </fieldset>
+        </li>
+        <li>
+          <fieldset className="border-1 border-gray-300 rounded-md p-2">
+            <legend>Thumbs Up/Down Buttons</legend>
+            <ThumbsUpDownButtons /> 
+          </fieldset>
         </li>
       </ul>
     </div>

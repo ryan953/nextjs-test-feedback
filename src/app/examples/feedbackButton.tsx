@@ -5,7 +5,7 @@ import * as Sentry from "@sentry/nextjs";
 import {useEffect, useRef, useState} from 'react';
 
 export default function FeedbackButton() {
-  const buttonRef = useRef<HTMLButtonElement>(null);
+  const buttonRef = useRef<HTMLButtonElement | null>(null);
   useFeedbackWidget({buttonRef, options: {
     tags: {
       component: 'FeedbackButton'
@@ -13,11 +13,9 @@ export default function FeedbackButton() {
   }})
 
   return (
-    <div className="bg-darkRed hover:bg-red text-white px-2 py-1 rounded-md text-md block">
-      <button ref={buttonRef}>
-        Give Feedback
-      </button>
-    </div>
+    <button ref={buttonRef}>
+      Give Feedback
+    </button>
   );
 }
 
@@ -25,7 +23,7 @@ function useFeedbackWidget({
   buttonRef,
   options = {},
 }: {
-  buttonRef?: RefObject<HTMLButtonElement> | RefObject<HTMLAnchorElement>;
+  buttonRef?: RefObject<HTMLButtonElement | null> | RefObject<HTMLAnchorElement | null>;
   options?: {
     tags?: Record<string, string>
   },
