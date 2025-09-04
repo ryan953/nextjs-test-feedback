@@ -5,6 +5,7 @@ import CreateFeedbackFromButton from "./examples/createFeedbackFormButton";
 import MyFeedbackForm from "./examples/myFeedbackForm";
 import CrashReportButton from "./examples/crashReportButton";
 import ThumbsUpDownButtons from "src/app/examples/thumbsUpDownButtons";
+import TranslatedFeedbackForm from "src/app/examples/translatedFeedbackForm";
 
 export default function Home() {
   return (
@@ -59,6 +60,12 @@ export default function Home() {
           <fieldset className="border-1 border-gray-300 rounded-md p-2">
             <legend>Thumbs Up/Down Buttons (<a href="https://github.com/ryan953/nextjs-test-feedback/blob/main/src/app/examples/thumbsUpDownButtons.tsx">source</a>)</legend>
             <ThumbsUpDownButtons /> 
+          </fieldset>
+        </li>
+        <li>
+          <fieldset className="border-1 border-gray-300 rounded-md p-2">
+            <legend>Translated Feedback Form (<a href="https://github.com/ryan953/nextjs-test-feedback/blob/main/src/app/examples/translatedFeedbackForm.tsx">source</a>)</legend>
+            <TranslatedFeedbackForm />
           </fieldset>
         </li>
       </ul>
