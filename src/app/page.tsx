@@ -11,8 +11,10 @@ export default function Home() {
   return (
     <div className="m-auto max-w-screen-lg">
       <h1 className="text-2xl mt-4">
-        <a className="float-right" href="https://sentry-test.sentry.io/feedback/">Sentry Feedback</a>
-        <a className="float-right" href="https://nextjs-test-feedback.vercel.app/">https://nextjs-test-feedback.vercel.app/</a>
+        <div className="float-right flex gap-1">
+          <a href="https://sentry-test.sentry.io/issues/feedback/?project=4509520745463808&statsPeriod=30d">Sentry Feedback</a>
+          <a href="https://nextjs-test-feedback.vercel.app/">https://nextjs-test-feedback.vercel.app/</a>
+        </div>
         Feedback Test Area (<a href="https://github.com/ryan953/nextjs-test-feedback">Github</a>)
       </h1>
       <p>
